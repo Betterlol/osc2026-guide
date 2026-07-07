@@ -27,6 +27,12 @@ A: 是否获奖无法提前保证，最终取决于项目完成度、工程质�
 
 如果目标是冲击优秀项目，除了完成基础功能，还应突出项目对 MoonBit 生态的实际价值、接口设计质量、文档完整度、长期维护潜力和展示效果。
 
+## Q: GitHub Actions CI 可以参考什么配置？
+
+A: 可以参考 [`moonbit-community/.github` 的 workflow templates](https://github.com/moonbit-community/.github/tree/main/workflow-templates)。其中 `check.yml` 可作为 MoonBit 项目的基础 CI 参考，覆盖 Linux、macOS、Windows 三个平台上的工具链安装、`moon check --target all`、`moon test --target all`、`moon fmt` 和 `moon info` 检查。
+
+参赛项目可以根据自己的包结构调整 workflow，例如项目不在仓库根目录时补充 `-C` 参数，或按实际目标后端缩小检查范围。`publish.yml` 更适合作为后续发布到 mooncakes.io 的参考；正式使用前应确认 token、权限、触发方式和发布范围符合自己的项目设置。
+
 ## Q: Gitlink 仓库和 Github 仓库要怎样同步？
 
 A: 优先参考 Gitlink 官方指南：[导入 GitHub 等第三方 Git 项目](https://help.gitlink.org.cn/快速开始/导入GitHub等第三方Git项目)。推荐做法是先在 GitHub 准备好参赛项目仓库，然后在 Gitlink 首页选择“导入项目”，填写 GitHub 仓库地址和项目信息完成导入。
