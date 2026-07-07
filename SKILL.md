@@ -20,6 +20,7 @@ When the user asks a broad question, asks for help, or invokes the skill without
 5. GitHub / Gitlink 仓库应该如何准备？
 6. 如何自查项目是否适合提交？
 7. 如何自查项目是否能通过审核？
+8. 如何自查项目是否能通过验收？
 ```
 
 Then answer the user's actual question directly with contestant-facing guidance.
@@ -51,7 +52,7 @@ Then answer the user's actual question directly with contestant-facing guidance.
 
 ## Review Mode
 
-Run the full local self-review only when the user explicitly asks for review, self-check, pre-submission check, or asks whether the current repository is ready to submit.
+Run the full local self-review only when the user explicitly asks for review, self-check, pre-submission check, acceptance check, or asks whether the current repository is ready to submit or pass final acceptance.
 
 ### Review Scope
 
@@ -80,6 +81,31 @@ Run the full local self-review only when the user explicitly asks for review, se
 - Include later-stage readiness suggestions when relevant: CI for check/build/test, at least one runnable example, tests for core paths, and readiness for publishing to mooncakes.io.
 - Call out compliance risks for copied code, generated code, fixtures, sample files, private/commercial code, undisclosed upstream sources, or materials whose redistribution rights are unclear.
 - If personal sensitive information is found, mention only the risk and file location; do not repeat the sensitive content.
+
+### Acceptance Review Checks
+
+When the user asks for final acceptance review, judge hard-blocking issues more strictly than pre-submission readiness. Treat the following as hard standards; if any standard is not satisfied, report that the project is unlikely to pass acceptance unless fixed:
+
+- The repository must be a valid MoonBit project.
+- The project must pass standard MoonBit CI commands: `moon check` and `moon test`.
+- Repository CI must include a standard MoonBit CI process, and the most recent relevant CI run must pass.
+- The project must already be published to mooncakes.io. Judge this using the `moon.mod` module name and any mooncakes query result available in context.
+- The topic and implementation must be meaningful enough to support production-grade use cases. Learning projects, toy demos, wrappers without real value, cheating, or meaningless code piles should fail. LOC is not a hard standard, but clearly insufficient scale, completeness, or functional boundaries should fail.
+- Completion must substantially cover the core promises in the proposal, and completed parts must be real and effective. If no proposal is available in the repository or provided context, ask the user to provide one and re-check this condition.
+- The open source license must be clear, with no obvious license conflict.
+- Repository structure must be basically clean, without obvious build artifacts, caches, or temporary files that should be ignored.
+- Commit history and contribution relationship must be basically reasonable. The main contributor, repository owner, and project applicant should be the same person unless there is a clear explanation.
+- The project must run normally, either through `moon run` or through the README / repository-provided startup script.
+- Runtime behavior must not show severe correctness or performance problems.
+
+Treat the following as positive signals that make acceptance easier and improve award competitiveness:
+
+- Effective MoonBit source scale is close to or above 4k LOC.
+- The project passes stricter checks: `moon check --deny-warn`, `moon test --deny-warn`, `moon fmt && git diff --exit-code`, and `moon info && git diff --exit-code`.
+- Documentation, examples, README, tests, and engineering maturity are strong.
+- Runtime behavior, performance, usability, or ecosystem value has clear highlights.
+- Architecture is sound, with clear comments and documentation.
+- Code quality is high and has no obvious latent risks.
 
 ### Review Report
 
