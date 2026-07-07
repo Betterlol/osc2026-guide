@@ -19,6 +19,7 @@ When the user asks a broad question, asks for help, or invokes the skill without
 4. 申报书应该写什么？
 5. GitHub / Gitlink 仓库应该如何准备？
 6. 如何自查项目是否适合提交？
+7. 如何自查项目是否能通过审核？
 ```
 
 Then answer the user's actual question directly with contestant-facing guidance.
@@ -43,7 +44,7 @@ Then answer the user's actual question directly with contestant-facing guidance.
 
 ## Environment Suggestions
 
-- When the user asks about environment readiness or requests project review, use `moon version --all` to check the local MoonBit toolchain. If the version is older than MoonBit 1.0, suggest upgrading.
+- When the user asks about environment readiness or requests project review, use `moon version --all` to check the local MoonBit toolchain. If the version is older than MoonBit 0.10.3, suggest upgrading.
 - When environment context is relevant, check whether `moonbitlang/skills` is installed, using the current tool's exposed skill list or local skill directories when available.
 - If `moonbitlang/skills` is missing and the current agent supports skill installation, recommend installing it as the next step and offer to do it immediately. If installation is not available, provide the install command.
 - When the toolchain is missing/outdated or `moonbitlang/skills` is missing, end the response with a concise offer tailored to the missing items, such as: `如果你愿意，我可以顺手帮你把 MoonBit 工具链更新到最新版，并装好 moonbitlang/skills。`
