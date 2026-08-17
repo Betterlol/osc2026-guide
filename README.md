@@ -1,6 +1,6 @@
 # osc2026-guide
 
-面向 MoonBit国产开源生态大赛 OSC 2026 选手的全流程 Agent skill。
+面向 MoonBit国产开源生态大赛 OSC 2026 和八月黑客松选手的全流程 Agent skill。
 
 ## 安装
 
@@ -24,11 +24,17 @@ git clone https://github.com/Milky2018/osc2026-guide.git ~/.agent/skills/osc2026
 在需要了解比赛信息或检查项目时调用：
 
 ```text
-使用 $osc2026-guide 介绍一下 MoonBit国产开源生态大赛，我可以咨询哪些问题？
+使用 $osc2026-guide 介绍一下 MoonBit国产开源生态大赛和八月黑客松，我可以咨询哪些问题？
 ```
 
 需要自查当前项目时可以说：
 
 ```text
 使用 $osc2026-guide 检查当前仓库是否适合提交到 MoonBit国产开源生态大赛。
+```
+
+检查八月黑客松项目时可以说：
+
+```text
+使用 $osc2026-guide 检查当前仓库是否适合提交到八月黑客松。
 ```
