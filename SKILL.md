@@ -32,6 +32,7 @@ Identify the contest before answering questions whose rules differ, including sc
 - For OSC2026, use `references/2026 MoonBit 国产基础软件开源大赛章程.md` as the primary rule source.
 - For the August Hackathon, use `references/2026 MoonBit 国产基础软件生态开源大赛-8月黑客松活动说明.md` as the primary rule source.
 - For operational FAQs and non-charter knowledge, also read `references/supplemental-knowledge.md`.
+- For researching MoonBit packages, use `references/research-guide.md` as the primary workflow and report template.
 - Use the matching bundled charter instead of querying online charter pages.
 - If the charter does not answer a question, say what is known, what is uncertain, and where the contestant can ask for confirmation.
 
