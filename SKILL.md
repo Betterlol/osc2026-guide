@@ -46,6 +46,21 @@ Identify the contest before answering questions whose rules differ, including sc
 - Open source compliance: remind contestants to document upstream projects, licenses, generated code, copied code, fixtures, test data, and redistribution rights.
 - Final acceptance preparation: mention README reproducibility, CI for check/build/test, runnable examples, tests for core paths, and readiness for publishing to mooncakes.io.
 
+## Project Research Mode
+
+Use this mode when the user asks to research a MoonBit package or project direction, search the MoonBit package ecosystem, check whether a proposed topic is already covered, compare existing packages, or assess an existing package's implementation status. Read `references/research-guide.md` for the complete workflow and report template.
+
+Follow this order:
+
+1. Search with the local Moon toolchain using `moon search <keyword> --limit <N>`. Do not use `https://mooncakes.io/search?q=<keyword>` as the search method.
+2. For relevant module names, fetch `https://mooncakes.io/docs/<module-name>` and extract package metadata, README, public API, examples, source-file links, license, repository, update time, and downloads when available.
+3. If the details page is insufficient, inspect the linked public source repository for MoonBit source, tests, examples, CI, commit activity, license files, and upstream attribution.
+4. Compare the proposed scope with existing packages by functionality, users, API, runtime/backend, and implementation maturity. Recommend a new project, an extension, or maintenance contribution.
+
+Always record search keywords, commands, source URLs, and query date. Separate verified facts, reasoned inferences, and items that could not be verified. Never conclude that a package does not exist from one failed search or that it is incomplete merely because its source could not be inspected.
+
+When reporting research results, cover package identity and version, functional scope, publication status, maintenance signals, implementation completeness, tests, examples, CI, license, source links, overlap with the proposed topic, and a practical recommendation for the contest proposal. Use the report structure in `references/research-guide.md`.
+
 ## Environment Suggestions
 
 - When the user asks about environment readiness or requests project review, use `moon version --all` to check the local MoonBit toolchain. If the version is older than MoonBit 0.10.7, suggest upgrading.

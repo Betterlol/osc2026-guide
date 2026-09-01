@@ -38,3 +38,9 @@ git clone https://github.com/Milky2018/osc2026-guide.git ~/.agent/skills/osc2026
 ```text
 使用 $osc2026-guide 检查当前仓库是否适合提交到八月黑客松。
 ```
+
+调研 MoonBit 生态包或判断参赛选题是否重复时可以说：
+
+```text
+使用 $osc2026-guide 调研 MoonBit 生态中的 agent 包，分析已有包的实现情况，并判断我是否适合新建一个项目。
+```
