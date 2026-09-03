@@ -32,7 +32,7 @@ Identify the contest before answering questions whose rules differ, including sc
 - For OSC2026, use `references/2026 MoonBit 国产基础软件开源大赛章程.md` as the primary rule source.
 - For the August Hackathon, use `references/2026 MoonBit 国产基础软件生态开源大赛-8月黑客松活动说明.md` as the primary rule source.
 - For operational FAQs and non-charter knowledge, also read `references/supplemental-knowledge.md`.
-- For researching MoonBit packages, use `references/research-guide.md` as the primary workflow and report template.
+- For researching MoonBit packages, use `moon search <keyword> --limit <N>` locally and `https://mooncakes.io/docs/<package>` for package details.
 - Use the matching bundled charter instead of querying online charter pages.
 - If the charter does not answer a question, say what is known, what is uncertain, and where the contestant can ask for confirmation.
 
@@ -47,20 +47,20 @@ Identify the contest before answering questions whose rules differ, including sc
 - Open source compliance: remind contestants to document upstream projects, licenses, generated code, copied code, fixtures, test data, and redistribution rights.
 - Final acceptance preparation: mention README reproducibility, CI for check/build/test, runnable examples, tests for core paths, and readiness for publishing to mooncakes.io.
 
-## Project Research Mode
+## Project Research Guide
 
-Use this mode when the user asks to research a MoonBit package or project direction, search the MoonBit package ecosystem, check whether a proposed topic is already covered, compare existing packages, or assess an existing package's implementation status. Treat this as a general MoonBit ecosystem research capability, separate from contest-rule guidance. Read `references/research-guide.md` for the complete workflow and report template.
+Use when researching MoonBit packages or checking topic duplication.
 
-Follow this order:
+1. Search locally: `moon search <keyword> --limit <N>`
+> For detailed usage, please refer to `moon search --help`.
+> If the user has not installed the MoonBit toolchain, please recommend they go to [MoonBit Install](https://www.moonbitlang.com/download) to install it first.
 
-1. Search with the local Moon toolchain using `moon search <keyword> --limit <N>`. Do not use `https://mooncakes.io/search?q=<keyword>` as the search method.
-2. For relevant module names, fetch `https://mooncakes.io/docs/<module-name>` and extract package metadata, README, public API, examples, source-file links, license, repository, update time, and downloads when available.
-3. If the details page is insufficient, inspect the linked public source repository for MoonBit source, tests, examples, CI, commit activity, license files, and upstream attribution.
-4. Compare the proposed scope with existing packages by functionality, users, API, runtime/backend, and implementation maturity. Report whether the topic has an independent implementation space, needs a narrower scope, or substantially overlaps with an existing package.
+2. For details: fetch `https://mooncakes.io/docs/<module-name>` to inspect README, API, source links, license, and maintenance signals.
+> for example, module `moonbit-community/miniio` corresponds to: `https://mooncakes.io/docs/moonbit-community/miniio`
 
-Always record search keywords, commands, source URLs, and query date. Separate verified facts, reasoned inferences, and items that could not be verified. Never conclude that a package does not exist from one failed search or that it is incomplete merely because its source could not be inspected.
+3. If needed, check the linked source repository.
 
-When reporting research results, cover package identity and version, functional scope, publication status, maintenance signals, implementation completeness, tests, examples, CI, license, source links, overlap with the proposed topic, and practical next steps. Treat maintenance signals as evidence for judging maturity and duplication, not as a recommendation to maintain a particular package. Use the report structure in `references/research-guide.md`.
+Report what was searched and the key findings concisely.
 
 ## Environment Suggestions
 
